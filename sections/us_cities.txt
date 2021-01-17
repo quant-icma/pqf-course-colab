@@ -1,0 +1,17 @@
+new york: 8244910
+los angeles: 3819702
+chicago: 2707120
+houston: 2145146
+philadelphia: 1536471
+phoenix: 1469471
+san antonio: 1359758
+san diego: 1326179
+dallas: 1223229
+
+data_file = open('us_cities.txt', 'r')
+for line in data_file:
+    city, population = line.split(':')         # Tuple unpacking
+    city = city.title()                        # Capitalize city names
+    population = f'{int(population):,}'        # Add commas to numbers
+    print(city.ljust(15) + population)
+data_file.close()
